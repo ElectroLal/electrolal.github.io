@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AR Album Cover Experience">
+    <title>AR Album Cover</title>
+    <!-- Importing A-Frame and AR.js -->
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://cdn.rawgit.com/jeromeetienne/ar.js/1.6.2/aframe/build/aframe-ar.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="ar-container">
+        <h1>Scan the Album Cover</h1>
+        <p>Hold your camera over the album cover to start the video.</p>
+
+        <!-- A-Frame Scene for AR -->
+        <a-scene embedded arjs>
+            <!-- Image target for album cover detection -->
+            <a-marker preset='nft' type='nft' url='https://your-server.com/path-to-album-cover.nft'>
+                <!-- Video to play when album cover is detected -->
+                <a-video src="https://drive.google.com/uc?export=download&id=1jbTZTxlSe8fXJzLh2"></a-video>
+                         position="0 1 0" rotation="-90 0 0" width="1" height="0.75">
+                </a-video>
+            </a-marker>
+            <!-- AR Camera -->
+            <a-entity camera></a-entity>
+        </a-scene>
+    </div>
+</body>
+</html>
